@@ -1265,12 +1265,13 @@ export default function Home() {
   }, [])
 
   const animate = () => {
-    var tl = gsap.timeline();
+    const tl = gsap.timeline();
     tl.fromTo(svgBg.current, {opacity: 0, y: 100}, {opacity: 1, y: 0});
     tl.fromTo(arrowIcon.current, {opacity: 0, x: -50, y: 50}, {opacity: 1, x: 0, y: 0});
     tl.fromTo(checkoutCard.current, {opacity: 0, x: 50}, {opacity: 1, x: 0});
     tl.fromTo(kwikChat.current, {opacity: 0, x: -50}, {opacity: 1, x: 0});
     tl.fromTo(smartCOD.current, {opacity: 0, y: 50}, {opacity: 1, y: 0});
+    tl.fromTo('.card', {scale: 0.95, repeat: -1, delay: 2, yoyo: true}, {scale: 1, repeat: -1, delay: 2, yoyo: true});
   }
   
 
@@ -1290,12 +1291,12 @@ export default function Home() {
           width="600"
           height="600"
           x="0px" y="0px"
-          viewBox="0 0 612 792">
+          viewBox="0 0 500 600">
 
           <SVGBg ref={svgBg}/>
-          <CheckoutCard ref={checkoutCard} />
-          <SmartCOD ref={smartCOD}/>
-          <KwikChat ref={kwikChat}/>
+          <CheckoutCard ref={checkoutCard} className="card" />
+          <SmartCOD ref={smartCOD} className="card"/>
+          <KwikChat ref={kwikChat} className="card"/>
           <Arrow ref={arrowIcon}/>
         </svg>
       </main>

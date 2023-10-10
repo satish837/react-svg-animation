@@ -48,3 +48,64 @@
 	.st47{opacity:0.96;fill:#FFFFFF;enable-background:new    ;}
 	.st48{fill:none;stroke:#F9A11B;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
 	.st49{fill:url(#SVGID_00000115496679703155050070000001927136233918475695_);}
+
+
+
+	.kwikchat {
+		width: 800px;
+		margin: 0 auto;
+	}
+	
+	.kwikchat .imgWrapper {
+		text-align: center;
+		position: relative;
+		width: 350px;
+		margin: 0 auto;
+	}
+	
+	.kwikchat .imgWrapper .screen {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+
+	.text {
+		background-image: linear-gradient(#f0a225, #eec748);
+		width: 100px;
+		padding: 6px;
+		text-align: center;
+		font-size: 12px;
+		border-radius: 18px;
+	}
+
+	.arrow-border {
+		height: 1px;
+		background: #f1a72b;
+		position: absolute;
+		width: 150px;
+		margin-left: 102px;
+		top: 50%;
+	}
+	
+	.box-screen {
+		position: absolute;
+		opacity: 0;
+	}
+	
+	.box-screen.right {right: 0;}
+	
+	.placeholder {
+		position: relative;
+		opacity: 0;
+	}
+	
+	.box-screen.right .arrow-border {
+		margin-left: -147px;
+	}
+	
+	.box-screen {
+		position: absolute;
+		top: 33%;
+	}
+	
