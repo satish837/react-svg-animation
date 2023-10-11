@@ -1271,7 +1271,7 @@ export default function Home() {
     tl.fromTo(checkoutCard.current, {opacity: 0, x: 50}, {opacity: 1, x: 0});
     tl.fromTo(kwikChat.current, {opacity: 0, x: -50}, {opacity: 1, x: 0});
     tl.fromTo(smartCOD.current, {opacity: 0, y: 50}, {opacity: 1, y: 0});
-    tl.fromTo('.card', {scale: 0.95, repeat: -1, delay: 2, yoyo: true}, {scale: 1, repeat: -1, delay: 2, yoyo: true});
+    tl.fromTo('.card', {x: -3, duration: 1, repeat: -1, yoyo: true}, {x: 3, duration: 1, repeat: -1, yoyo: true});
   }
   
 
