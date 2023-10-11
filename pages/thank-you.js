@@ -1,12 +1,14 @@
 import React from 'react';
 import { gsap } from "gsap";
+import Confetti from 'react-confetti'
 
-function SVG() {
+function SVG(props) {
   return (
     <>
       {/*?xml version="1.0" encoding="UTF-8"?*/}
       <svg
         className='thankYouBg'
+        {...props}
         id="Layer_2"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -625,7 +627,7 @@ function SVG() {
               d="m180.447253152871781,147.06008523136552c0-.522584439606362.414862179726697-.937809320544147.98384970560619-.937809320544147.568998860295324,0,.964173164871681.415224880937785.964173164871681.937809320544147,0,.522561770781977-.401861608170293.951546628937649-.964173164871681.951546628937649-.562300222289196,0-.98384970560619-.428984858155673-.98384970560619-.951546628937649Zm.086912277854935-7.671402653712903h1.800573493506818l-.307899325511244,5.708509033556766h-1.204836753257041l-.294524718327011-5.708509033556766h.006687303588478Z"
             />
           </g>
-          <g className="confetti">
+          {/* <g className="confetti">
             <path
               className="cls-20"
               d="m174.442360557279244,101.997009918472941c-.522199069569979-1.842544824344259-2.911821999725362-1.661670263827546-2.911821999725362-1.661670263827546l.066850367084044,1.279496530806682c1.385722648188676-.241037624012279,2.242547588804882,1.387196121863781,2.242547588804882,1.387196121863781l.602424043836436-.998335085248982v-.006687303593935Z"
@@ -722,7 +724,7 @@ function SVG() {
               className="cls-20"
               d="m120.332961637943299,80.242644616226244c.040112487132319.040112487133229-.080224974267367.247724927600757-.2811614455577.462036006077142-.20055110125486.214299744056916-.394800268954896.361749121034336-.434912756086305.321636633901107-.040112487135048-.040112487134138.080224974265548-.247736262016588.281150111143688-.462410041700423.200562435666143-.214299744060554.394811603366179-.361749121033426.434924090500317-.321262598277826Z"
             />
-          </g>
+          </g> */}
 
           <path
             className="cls-12"
@@ -883,20 +885,28 @@ export default function ThankYou() {
     const tl = gsap.timeline();
     tl.fromTo('.thankYouBg', { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
     tl.fromTo('.icon', { opacity: 0}, { opacity: 1 });
-    tl.fromTo('.confetti', { opacity: 0,  y: 10, yoyo: true, duration: 0.5, repeat: -1}, { opacity: 1, scale: 1, duration: 0.5,  y: 0, yoyo: true, repeat: -1 });
+    tl.fromTo('.confetti', { opacity: 0}, { opacity: 1 });
+    tl.fromTo('.thankyou-text', { opacity: 0, y: 5 }, { opacity: 1, y: 0 });
+    tl.fromTo('.purchase-text', { opacity: 0, y: 5 }, { opacity: 1, y: 0 });
+    tl.fromTo('.done-btn', { opacity: 0, y: 5 }, { opacity: 1, y: 0 });
     tl.fromTo('.appIcon .layer1', { scale: 0.98, duration: 0.5, yoyo: true, repeat: -1 }, { scale: 1, duration: 0.5, yoyo: true,  repeat: -1 });
     tl.fromTo('.appIcon .layer2', { scale: 0.99, yoyo: true, duration: 0.5, repeat: -1 }, { scale: 1, duration: 0.5, yoyo: true,  repeat: -1 });
     tl.fromTo('.appIcon .layer3',{ scale: 0.99, duration: 0.5, yoyo: true, repeat: -1 }, { scale: 1, duration: 0.5, yoyo: true,  repeat: -1 });
-    tl.fromTo('.thankyou-text', { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
-    tl.fromTo('.purchase-text', { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
-    tl.fromTo('.done-btn', { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
-    tl.fromTo('.message', { opacity: 0, y: 10 }, { opacity: 1, y: 0 });
+    
+    tl.fromTo('.message', { opacity: 0, y: 5 }, { opacity: 1, y: 0 });
     tl.fromTo('.message .whiteLayer', { opacity: 0 }, { opacity: 1 });
     tl.fromTo('.message .greenTick', { opacity: 0, yoyo: true }, { opacity: 1, yoyo: true });
   }
+
   return (
-    <div>
-      <SVG />
+    <div className='thankyouWrapper'>
+      <SVG className="mobilePlaceholder" />
+      <Confetti
+      width={200}
+      height={200}
+      className='confetti'
+      numberOfPieces={30}
+    />
     </div>
   )
 }

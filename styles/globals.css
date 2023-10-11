@@ -109,3 +109,17 @@
 		top: 33%;
 	}
 	
+	.thankyouWrapper {
+		width: 900px;
+	}
+	
+	canvas.confetti {
+		position: absolute;
+		margin-left: 230px;
+		margin-top: 150px;
+	}
+	
+	.appIcon {
+		z-index: 3; position: relative;
+	}
+	
